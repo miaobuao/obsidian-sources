@@ -1,0 +1,9 @@
+{
+	"id": "sources",
+	"name": "Sources",
+	"version": "0.0.1",
+	"minAppVersion": "0.15.0",
+	"description": "Easily install plugin from custom sources",
+	"author": "miaobuao",
+	"isDesktopOnly": true
+}
