@@ -5,11 +5,11 @@ import SourcesPlugin from '../index'
 import Source from '../model/source'
 import fetchSource from '../utils/fetch-source'
 
-export interface MyPluginSettings {
+export interface SourcesPluginSettings {
 	sourcesList: Source[]
 }
 
-export const DEFAULT_SETTINGS: MyPluginSettings = {
+export const DEFAULT_SETTINGS: SourcesPluginSettings = {
 	sourcesList: [],
 }
 
@@ -70,10 +70,7 @@ export class SourcesSettingTab extends PluginSettingTab {
 				source.metadata = metadata
 				source.lastUpdated = Date.now()
 			} catch (error) {
-				console.error(
-					`Failed to update source: ${sourcesList[i].url}`,
-					error,
-				)
+				console.error(`Failed to update source: ${sourcesList[i].url}`, error)
 			}
 		}
 
