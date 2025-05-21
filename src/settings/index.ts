@@ -22,8 +22,6 @@ export class SourcesSettingTab extends PluginSettingTab {
 		const { containerEl } = this
 		containerEl.empty()
 
-		containerEl.createEl('h2', { text: '源插件设置' })
-
 		new Setting(containerEl)
 			.setName('源管理')
 			.setDesc('管理您的插件源列表')
