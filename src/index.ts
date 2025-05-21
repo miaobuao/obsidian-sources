@@ -1,12 +1,12 @@
 import { Plugin } from 'obsidian'
 import {
 	DEFAULT_SETTINGS,
-	MyPluginSettings,
+	SourcesPluginSettings,
 	SourcesSettingTab,
 } from './settings'
 
 export default class SourcesPlugin extends Plugin {
-	settings: MyPluginSettings
+	settings: SourcesPluginSettings
 
 	async onload() {
 		this.addSettingTab(new SourcesSettingTab(this))
@@ -16,11 +16,7 @@ export default class SourcesPlugin extends Plugin {
 	onunload() {}
 
 	async loadSettings() {
-		this.settings = Object.assign(
-			{},
-			DEFAULT_SETTINGS,
-			await this.loadData(),
-		)
+		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData())
 	}
 
 	async saveSettings() {
